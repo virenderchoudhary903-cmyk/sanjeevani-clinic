@@ -3,63 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanjeevani Hospital | Best Care</title>
+    <title>Sanjeevani Multispeciality Hospital</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; }
-        /* Header section */
-        header { background-color: #0056b3; color: white; padding: 20px; text-align: center; }
-        header h1 { margin: 0; font-size: 2.5em; }
-        header p { margin: 5px 0 0 0; font-size: 1.2em; }
+        /* General Styles */
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f4f7f6; color: #333; line-height: 1.6; }
+        h1, h2, h3 { color: #004d99; }
+        
+        /* Navigation Bar */
+        nav { background-color: white; padding: 15px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        nav .logo { font-size: 1.5em; font-weight: bold; color: #004d99; }
+        nav .menu { display: flex; gap: 15px; }
+        nav a { text-decoration: none; color: #333; font-weight: bold; padding: 5px 10px; border-radius: 4px; transition: 0.3s; }
+        nav a:hover { background-color: #004d99; color: white; }
+
         /* Hero Banner */
-        .hero { background: linear-gradient(rgba(0, 86, 179, 0.7), rgba(0, 86, 179, 0.7)), url('https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80') center/cover; color: white; padding: 80px 20px; text-align: center; }
-        .hero h2 { font-size: 2.5em; margin-bottom: 10px; }
-        .hero p { font-size: 1.2em; max-width: 600px; margin: 0 auto 20px auto; }
-        /* Departments Section */
-        .services { display: flex; flex-wrap: wrap; justify-content: center; padding: 40px 20px; gap: 20px; }
-        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px; text-align: center; }
-        .card h3 { color: #0056b3; }
+        .hero { background: linear-gradient(rgba(0, 77, 153, 0.8), rgba(0, 77, 153, 0.8)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover; color: white; padding: 100px 20px; text-align: center; }
+        .hero h1 { color: white; font-size: 3em; margin-bottom: 10px; }
+        .hero p { font-size: 1.2em; max-width: 800px; margin: 0 auto 30px auto; }
+        .btn-primary { background-color: #e60000; color: white; padding: 15px 30px; text-decoration: none; font-size: 1.2em; border-radius: 5px; font-weight: bold; }
+
+        /* Section Containers */
+        .section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
+        .section-title { font-size: 2.5em; margin-bottom: 10px; }
+        .section-subtitle { color: #666; margin-bottom: 40px; font-size: 1.1em; }
+
+        /* Grid Layouts */
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        
+        /* Cards */
+        .card { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; border-top: 4px solid #004d99; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .card img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid #004d99; }
+        
+        /* About Section Specific */
+        .about-text { text-align: left; font-size: 1.1em; max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+
+        /* Facilities Badges */
+        .facility-badge { background: #e6f2ff; color: #004d99; padding: 10px 20px; border-radius: 50px; font-weight: bold; display: inline-block; margin: 10px; }
+
+        /* Contact Details */
+        .contact-box { background: #004d99; color: white; padding: 40px; border-radius: 10px; text-align: left; max-width: 600px; margin: 0 auto; }
+        .contact-box h3 { color: #ffcc00; }
+
         /* Footer */
-        footer { background-color: #333; color: white; text-align: center; padding: 20px; margin-top: 20px; }
-        /* WhatsApp Button */
-        .whatsapp-btn { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1em; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        footer { background-color: #1a1a1a; color: #ccc; text-align: center; padding: 30px 20px; margin-top: 40px; }
+        
+        /* WhatsApp Floating Button */
+        .whatsapp-btn { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1em; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; display: flex; align-items: center; gap: 10px; }
+
+        /* Responsive Fix for Mobile */
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 10px; }
+            nav .menu { flex-wrap: wrap; justify-content: center; }
+            .hero h1 { font-size: 2em; }
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Sanjeevani Multispeciality Hospital</h1>
-        <p>Aapki Sehat, Hamari Zimmedari</p>
-    </header>
+    <!-- Navigation Menu -->
+    <nav>
+        <div class="logo">🏥 Sanjeevani Hospital</div>
+        <div class="menu">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#departments">Departments</a>
+            <a href="#doctors">Our Doctors</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
 
-    <div class="hero">
-        <h2>Expert Doctors, Modern Care</h2>
-        <p>Humare yahan sabhi aadhunik suvidhayein aur anubhavi doctor uplabdh hain.</p>
+    <!-- Hero Banner -->
+    <div id="home" class="hero">
+        <h1>Advanced Healthcare, Closer to Home</h1>
+        <p>Shehar jaisi aadhunik suvidhayein ab aapke apne ilake mein. Best doctors, 24/7 emergency care, aur bharosemand ilaaj.</p>
+        <br>
+        <a href="#contact" class="btn-primary">Book Appointment Now</a>
     </div>
 
-    <h2 style="text-align: center; color: #333; margin-top: 40px;">Our Departments</h2>
-    
-    <div class="services">
-        <div class="card">
-            <h3>General Medicine</h3>
-            <p>Bukhar, BP, Sugar aur general bimariyon ka behtareen ilaaj.</p>
-        </div>
-        <div class="card">
-            <h3>Orthopedics (Haddi Rog)</h3>
-            <p>Haddiyon ke fracture aur jodon ke dard ka aadhunik ilaaj.</p>
-        </div>
-        <div class="card">
-            <h3>Pediatrics (Bal Rog)</h3>
-            <p>Navjat shishu aur bacchon ke liye special care unit.</p>
+    <!-- About Us Section -->
+    <div id="about" class="section">
+        <h2 class="section-title">About Sanjeevani</h2>
+        <p class="section-subtitle">Aapka Apna Vishwasniya Hospital</p>
+        <div class="about-text">
+            <p><strong>Sanjeevani Multispeciality Hospital</strong> pichle 10 saalon se aam janta ko behtareen aur sasta ilaaj uplabdh kara raha hai. Hamara manna hai ki acche ilaaj ke liye kisi ko bade shehar jane ki zaroorat nahi padni chahiye.</p>
+            <p>Hamare paas expert doctors ki team, aadhunik machines, aur 24 ghante emergency suvidha uplabdh hai. Hamara staff har patient ki poori dekhbhal karta hai.</p>
         </div>
     </div>
 
+    <!-- Departments Section -->
+    <div id="departments" class="section">
+        <h2 class="section-title">Our Departments</h2>
+        <p class="section-subtitle">Har Bimari Ka Sateek Ilaaj</p>
+        <div class="grid-3">
+            <div class="card">
+                <h3>🩺 General Medicine</h3>
+                <p>Mausami bukhar, Dengue, Malaria, BP, aur Sugar jaisi sabhi aam bimariyon ka behtareen ilaaj.</p>
+            </div>
+            <div class="card">
+                <h3>🦴 Orthopedics (Haddi Rog)</h3>
+                <p>Haddiyon ka tootna, jodon ka dard (Arthritis), aur spine ki samasyaon ka aadhunik ilaaj.</p>
+            </div>
+            <div class="card">
+                <h3>👶 Pediatrics (Bal Rog)</h3>
+                <p>Navjat shishu aur bacchon ki bimariyon ke liye special care, vaccination, aur NICU suvidha.</p>
+            </div>
+            <div class="card">
+                <h3>👁️ Ophthalmology (Netra Rog)</h3>
+                <p>Motiyabind ka operation, aankhon ki janch, aur chashme ka number check karne ki suvidha.</p>
+            </div>
+            <div class="card">
+                <h3>🤰 Gynecology (Stree Rog)</h3>
+                <p>Mahilao ki samasyayein, pregnancy care, aur normal/cesarean delivery ki suvidha.</p>
+            </div>
+            <div class="card">
+                <h3>🦷 Dentistry (Dant Rog)</h3>
+                <p>Danton me dard, root canal, aur daant nikalne/lagane ka dard-rahit ilaaj.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Doctors Section -->
+    <div id="doctors" class="section">
+        <h2 class="section-title">Our Expert Doctors</h2>
+        <p class="section-subtitle">Anubhavi aur Bharosemand Team</p>
+        <div class="grid-3">
+            <div class="card">
+                <!-- Change image link to change doctor photo -->
+                <img src="https://images.unsplash.com/photo-1612349317150-e410f624c427?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Doctor 1">
+                <h3>Dr. R.K. Sharma</h3>
+                <p><strong>MBBS, MD (General Medicine)</strong></p>
+                <p>15+ years experience. Expert in Diabetes & Fever management.</p>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1594824453462-2ea20ec8d80f?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Doctor 2">
+                <h3>Dr. Anjali Verma</h3>
+                <p><strong>MBBS, MS (Gynecology)</strong></p>
+                <p>Specialist in Women's Health & Safe Delivery.</p>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Doctor 3">
+                <h3>Dr. V. Singh</h3>
+                <p><strong>MS (Orthopedics)</strong></p>
+                <p>Expert in trauma care and joint replacement surgeries.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Facilities Section -->
+    <div class="section">
+        <h2 class="section-title">24/7 Hospital Facilities</h2>
+        <div>
+            <span class="facility-badge">🚑 24/7 Ambulance Service</span>
+            <span class="facility-badge">💊 24/7 Pharmacy (Medical Store)</span>
+            <span class="facility-badge">🔬 Advanced Pathology Lab</span>
+            <span class="facility-badge">🛏️ Modern ICU / NICU</span>
+            <span class="facility-badge">☢️ Digital X-Ray & Ultrasound</span>
+            <span class="facility-badge">🔪 Modular Operation Theatre</span>
+        </div>
+    </div>
+
+    <!-- Contact & Timings Section -->
+    <div id="contact" class="section">
+        <h2 class="section-title">Contact & Location</h2>
+        <div class="contact-box">
+            <h3>📍 Hospital Address</h3>
+            <p>Sanjeevani Multispeciality Hospital<br>Main Pal Road, Near Basni Circle,<br>Jodhpur, Rajasthan - 342005</p>
+            
+            <h3>📞 Emergency Numbers</h3>
+            <p>Reception: +91 98765 43210<br>Ambulance: +91 98765 43211</p>
+
+            <h3>⏰ OPD Timings</h3>
+            <p>Morning: 09:00 AM to 02:00 PM<br>Evening: 05:00 PM to 08:00 PM<br><strong>Sunday: Emergency Only</strong></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
     <footer>
-        <p>Address: Main Market Road, City Center | Phone: +91 9876543210</p>
-        <p>&copy; 2026 Sanjeevani Hospital. All rights reserved.</p>
+        <h2>Sanjeevani Hospital</h2>
+        <p>Aapki Sehat, Hamari Zimmedari | Serving the community with care.</p>
+        <p>&copy; 2026 Sanjeevani Multispeciality Hospital. All rights reserved.</p>
+        <p style="font-size: 0.8em; margin-top: 20px;">Website Developed & Managed by V. Creations</p>
     </footer>
 
-    <!-- WHATSAPP BUTTON KO APNE NUMBER SE BADLEIN -->
-    <a href="https://wa.me/919876543210" class="whatsapp-btn" target="_blank">💬 Chat on WhatsApp</a>
+    <!-- WHATSAPP BUTTON (Replace 9876543210 with real number) -->
+    <a href="https://wa.me/919876543210" class="whatsapp-btn" target="_blank">
+        💬 Book Appointment / Inquiry
+    </a>
 
 </body>
 </html>
