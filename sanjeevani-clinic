@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanjeevani Hospital | Best Care</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; }
+        /* Header section */
+        header { background-color: #0056b3; color: white; padding: 20px; text-align: center; }
+        header h1 { margin: 0; font-size: 2.5em; }
+        header p { margin: 5px 0 0 0; font-size: 1.2em; }
+        /* Hero Banner */
+        .hero { background: linear-gradient(rgba(0, 86, 179, 0.7), rgba(0, 86, 179, 0.7)), url('https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80') center/cover; color: white; padding: 80px 20px; text-align: center; }
+        .hero h2 { font-size: 2.5em; margin-bottom: 10px; }
+        .hero p { font-size: 1.2em; max-width: 600px; margin: 0 auto 20px auto; }
+        /* Departments Section */
+        .services { display: flex; flex-wrap: wrap; justify-content: center; padding: 40px 20px; gap: 20px; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px; text-align: center; }
+        .card h3 { color: #0056b3; }
+        /* Footer */
+        footer { background-color: #333; color: white; text-align: center; padding: 20px; margin-top: 20px; }
+        /* WhatsApp Button */
+        .whatsapp-btn { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1em; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Sanjeevani Multispeciality Hospital</h1>
+        <p>Aapki Sehat, Hamari Zimmedari</p>
+    </header>
+
+    <div class="hero">
+        <h2>Expert Doctors, Modern Care</h2>
+        <p>Humare yahan sabhi aadhunik suvidhayein aur anubhavi doctor uplabdh hain.</p>
+    </div>
+
+    <h2 style="text-align: center; color: #333; margin-top: 40px;">Our Departments</h2>
+    
+    <div class="services">
+        <div class="card">
+            <h3>General Medicine</h3>
+            <p>Bukhar, BP, Sugar aur general bimariyon ka behtareen ilaaj.</p>
+        </div>
+        <div class="card">
+            <h3>Orthopedics (Haddi Rog)</h3>
+            <p>Haddiyon ke fracture aur jodon ke dard ka aadhunik ilaaj.</p>
+        </div>
+        <div class="card">
+            <h3>Pediatrics (Bal Rog)</h3>
+            <p>Navjat shishu aur bacchon ke liye special care unit.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Address: Main Market Road, City Center | Phone: +91 9876543210</p>
+        <p>&copy; 2026 Sanjeevani Hospital. All rights reserved.</p>
+    </footer>
+
+    <!-- WHATSAPP BUTTON KO APNE NUMBER SE BADLEIN -->
+    <a href="https://wa.me/919876543210" class="whatsapp-btn" target="_blank">💬 Chat on WhatsApp</a>
+
+</body>
+</html>
